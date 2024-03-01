@@ -1,4 +1,5 @@
  fg_bold[purple]=$(tput setaf 5)
+ 
 function directory() {
     local color="%{$fg_no_bold[cyan]%}";
     local directory=" %c";
@@ -8,8 +9,20 @@ function directory() {
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_no_bold[red]%} %{$fg_bold[purple]%}";
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} ";
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_no_bold[red]%} 🤷";
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[red]%} %{$fg_no_bold[green]%}✓";
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_no_bold[red]%} 🤷";
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_no_bold[red]%} %{$fg_no_bold[green]%}✓";
+
+ZSH_THEME_GIT_PROMPT_DIRTY="$fg_no_bold[red]%} 📝"
+ZSH_THEME_GIT_PROMPT_CLEAN="$fg_no_bold[red]%} ✓"
+ZSH_THEME_GIT_PROMPT_CONFLICTED="$fg_no_bold[red]%} 🏳"
+ZSH_THEME_GIT_PROMPT_AHEAD="$fg_no_bold[red]%} 🏎💨"
+ZSH_THEME_GIT_PROMPT_BEHIND="$fg_no_bold[red]%} 😰"
+ZSH_THEME_GIT_PROMPT_DIVERGED="$fg_no_bold[red]%} 😵"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="$fg_no_bold[red]%} 🤷"
+ZSH_THEME_GIT_PROMPT_STASHED="$fg_no_bold[red]%} 📦"
+ZSH_THEME_GIT_PROMPT_MODIFIED="$fg_no_bold[red]%} 📝"
+ZSH_THEME_GIT_PROMPT_RENAMED="$fg_no_bold[red]%} 👅"
+ZSH_THEME_GIT_PROMPT_DELETED="$fg_no_bold[red]%} 🗑"
 
 function update_git_status() {
     GIT_STATUS=$(git_prompt_info);
